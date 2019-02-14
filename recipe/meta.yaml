@@ -1,35 +1,40 @@
 {% set name = "colorcet" %}
-{% set version = "1.0.0" %}
-{% set sha256 = "c01166740a5d97564bb904eece38b8ef67b6e8e6952e352d1049e687f7c1bf5f" %}
+{% set version = "1.0.1" %}
+{% set sha256 = "6708bc6dd2c7ac8b341e70341848c87393a1d514e6390d238051b33b75897d9e" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/bokeh/colorcet/archive/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/c/{{ name }}/{{name}}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
   noarch: python
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
-    - python
-    - setuptools
+  host:
+    - python >=2.7
+    - pip
+    - setuptools >=30.3.0
+    - param >=1.7.0
+    - pyct >=0.4.4
+    - wheel
 
   run:
-    - python
+    - python >=2.7
+    - param >=1.7.0
+    - pyct >=0.4.4
 
 test:
   imports:
     - colorcet
 
 about:
-  home: http://github.com/bokeh/colorcet
+  home: http://github.com/pyviz/colorcet
   license: CC-BY-4.0
   license_file: LICENSE.txt
   summary: Collection of perceptually uniform colormaps
@@ -37,3 +42,4 @@ about:
 extra:
   recipe-maintainers:
     - jbednar
+    - jsignell
