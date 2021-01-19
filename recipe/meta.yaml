@@ -1,19 +1,19 @@
 {% set name = "colorcet" %}
-{% set version = "2.0.1" %}
-{% set sha256 = "ab1d16aba97f54af190631c7777c356b04b53de549672ff6b01c66d716eddff3" %}
+{% set version = "2.0.5" %}
+{% set sha256 = "2246ad5e09f37834a3225bf20ccb2700bc565018f133a1ff3d86bb0fdb7fee5c" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/{{ name }}/{{name}}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/c/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
