@@ -1,6 +1,6 @@
 {% set name = "colorcet" %}
-{% set version = "3.0.1" %}
-{% set sha256 = "51455a20353d12fac91f953772d8409f2474e6a0db1af3fa4f7005f405a2480b" %}
+{% set version = "3.1.0" %}
+{% set sha256 = "2921b3cd81a2288aaf2d63dbc0ce3c26dcd882e8c389cc505d6886bf7aa9a4eb" %}
 
 package:
   name: {{ name|lower }}
@@ -17,25 +17,27 @@ build:
 
 requirements:
   host:
-    - python >=2.7
+    - python >=3.7
     - pip
     - setuptools >=30.3.0
-    - pyct >=0.4.4
-    - wheel
+    - setuptools_scm >=6
 
   run:
-    - python >=2.7
-    - pyct >=0.4.4
+    - python >=3.7
 
 test:
   imports:
     - colorcet
 
 about:
-  home: http://github.com/pyviz/colorcet
+  home: https://github.com/holoviz/colorcet
   license: CC-BY-4.0
   license_file: LICENSE.txt
   summary: Collection of perceptually uniform colormaps
+  description: |
+    HoloViz Colorcet provides perceptually accurate, 256-color colormaps,
+    including both continuous and categorical types, designed for use with
+    tools like Bokeh, Matplotlib, HoloViews, and Datashader.
 
 extra:
   recipe-maintainers:
