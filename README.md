@@ -3,11 +3,16 @@ About colorcet-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/colorcet-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/pyviz/colorcet
+Home: https://github.com/holoviz/colorcet
 
 Package license: CC-BY-4.0
 
 Summary: Collection of perceptually uniform colormaps
+
+HoloViz Colorcet provides perceptually accurate, 256-color colormaps,
+including both continuous and categorical types, designed for use with
+tools like Bokeh, Matplotlib, HoloViews, and Datashader.
+
 
 Current build status
 ====================
@@ -146,4 +151,5 @@ Feedstock Maintainers
 * [@droumis](https://github.com/droumis/)
 * [@jbednar](https://github.com/jbednar/)
 * [@jsignell](https://github.com/jsignell/)
+* [@maximlt](https://github.com/maximlt/)
 
